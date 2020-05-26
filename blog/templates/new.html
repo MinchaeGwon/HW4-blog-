@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<head>
+    <style>
+        .color {
+            padding-top: 40px;
+            background-color: #FBFBF7;
+            width: 100%;
+            height: 100%;
+        }
+        h2 {
+            font-family: 'Handon3gyeopsal300g';
+            font-weight: bold;
+            width: 450px;
+            border: 3px solid #91B9CA;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #FBFBF7;
+            border: none;
+        }
+        #line {
+            width: 450px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border: 3px solid #7478C0;
+            border-style: dashed;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center" class="color">
+        <h2>Write</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div id="line">
+                <table id="table">
+                    {{form.as_table}}
+                </table>
+            </div>
+            <br>
+            <button type="submit"><img src="{% static 'check.png' %}"></button>
+        </form>
+    </div>
+</body>
+{% endblock %}

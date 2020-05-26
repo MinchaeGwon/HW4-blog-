@@ -1,0 +1,74 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face { font-family: 'DWImpactamin';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/DWImpactamin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face { font-family: 'JSDongkang-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSDongkang-RegularA1.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face { font-family: 'Handon3gyeopsal300g';
+          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal300g.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        #img {
+            position: relative;
+        }
+        #text {
+            left: 38.5%; width: 450px; bottom: 35%;
+            font-size: 3em; 
+            position: absolute;
+            opacity: 0.8;
+            font-family: 'DWImpactamin';
+        }
+
+        #pos {
+          position: absolute;
+          right: 40px;
+          top: 15px;
+          font-size: 20px;
+          color: #243067;
+        }
+
+    </style>
+  </head>
+<body>
+    <div id="img">
+        <img src="{% static 'bsky.jpg' %}" alt="sky" width="100%" height="180px">
+        <div id="text">
+            Minchae's Playlist  
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#AADCF8; font-family: 'DWImpactamin';">
+        <a class="navbar-brand" href="{% url 'home' %}">Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'newblog' %}">Write <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+        <p id="pos">🎼음악 추천 블로그🥁</p>
+    </nav>
+
+    {% block contents %}
+    {% endblock %}
+</body>
